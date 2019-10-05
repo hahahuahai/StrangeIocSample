@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1A7E3EAB-63B6-9819-A545-5B00C8BDC4DF}</ProjectGuid>
+    <ProjectGuid>{B2148BD4-5E0A-19CF-3F3E-B488EA46A060}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -73,6 +73,19 @@
     <Compile Include="Assets\Scripts\Demo1\service\RandomNumberService.cs" />
     <Compile Include="Assets\Scripts\Demo1\view\RandomNumberMediator.cs" />
     <Compile Include="Assets\Scripts\Demo1\view\RandomNumberView.cs" />
+    <Compile Include="Assets\Scripts\Demo2\controller\CallWebServiceCommand.cs" />
+    <Compile Include="Assets\Scripts\Demo2\controller\StartCommand.cs" />
+    <Compile Include="Assets\Scripts\Demo2\Demo2Context.cs" />
+    <Compile Include="Assets\Scripts\Demo2\Demo2Root.cs" />
+    <Compile Include="Assets\Scripts\Demo2\model\GuessNumberModel.cs" />
+    <Compile Include="Assets\Scripts\Demo2\model\IGuessNumberModel.cs" />
+    <Compile Include="Assets\Scripts\Demo2\service\GuessNumberService.cs" />
+    <Compile Include="Assets\Scripts\Demo2\service\IGuessNumberService.cs" />
+    <Compile Include="Assets\Scripts\Demo2\signal\CallWebServiceSignal.cs" />
+    <Compile Include="Assets\Scripts\Demo2\signal\FulfillWebServiceRequestSignal.cs" />
+    <Compile Include="Assets\Scripts\Demo2\signal\StartSignal.cs" />
+    <Compile Include="Assets\Scripts\Demo2\view\GuessNumberMediator.cs" />
+    <Compile Include="Assets\Scripts\Demo2\view\GuessNumberView.cs" />
     <Compile Include="Assets\StrangeIoC\examples\Assets\scripts\multiplecontexts\game\controller\GameEvent.cs" />
     <Compile Include="Assets\StrangeIoC\examples\Assets\scripts\multiplecontexts\game\controller\GameOverCommand.cs" />
     <Compile Include="Assets\StrangeIoC\examples\Assets\scripts\multiplecontexts\game\controller\RemoveSocialContextCommand.cs" />
@@ -263,31 +276,58 @@
     <None Include="Assets\StrangeIoC\examples\Assets\scripts\multiplecontexts\ReadMe.txt" />
     <None Include="Assets\StrangeIoC\README.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/lilei10/Documents/unityDemo/TestStrangeIoc/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Editor">
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/lilei10/Documents/unityDemo/TestStrangeIoc/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/lilei10/Documents/unityDemo/TestStrangeIoc/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/lilei10/Documents/unityDemo/TestStrangeIoc/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/lilei10/Documents/unityDemo/TestStrangeIoc/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/lilei10/Documents/unityDemo/TestStrangeIoc/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-weaver.Editor">
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/lilei10/Documents/unityDemo/TestStrangeIoc/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/lilei10/Documents/unityDemo/TestStrangeIoc/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/lilei10/Documents/unityDemo/TestStrangeIoc/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.multiplayer-hlapi.Runtime">
+      <HintPath>C:/Users/lilei10/Documents/unityDemo/StrangeIocSample/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Program Files/Unity201902/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
